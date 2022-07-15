@@ -1,0 +1,10 @@
+diff -urN loguru-f64f3fc088392869142c7b170dbb015c2f79bd5a/Makefile loguru-f64f3fc088392869142c7b170dbb015c2f79bd5a-buildroot-makefile/Makefile
+--- loguru-f64f3fc088392869142c7b170dbb015c2f79bd5a/Makefile	1969-12-31 19:00:00.000000000 -0500
++++ loguru-f64f3fc088392869142c7b170dbb015c2f79bd5a-buildroot-makefile/Makefile	2020-11-26 14:27:26.692566043 -0500
+@@ -0,0 +1,6 @@
++libloguru.so: loguru.cpp loguru.hpp
++	$(CXX) -std=c++11 $(CFLAGS) -fPIC -DLOGURU_STACKTRACES=0 -DLOGURU_WITH_STREAMS=1 $^ -o $@ -shared -lstdc++ -lpthread -ldl
++
++.PHONY: clean
++clean:
++	rm -f libloguru.so

@@ -1,0 +1,17 @@
+diff -urN loguru-f64f3fc088392869142c7b170dbb015c2f79bd5a/loguru.hpp loguru-f64f3fc088392869142c7b170dbb015c2f79bd5a-fix-build-warning/loguru.hpp
+--- loguru-f64f3fc088392869142c7b170dbb015c2f79bd5a/loguru.hpp	2020-11-26 10:38:02.566187013 -0500
++++ loguru-f64f3fc088392869142c7b170dbb015c2f79bd5a-fix-build-warning/loguru.hpp	2020-11-26 13:53:02.916566043 -0500
+@@ -83,13 +83,6 @@
+ 	#error "You are defining LOGURU_IMPLEMENTATION. This is for older versions of Loguru. You should now instead include loguru.cpp (or build it and link with it)"
+ #endif
+ 
+-// Disable all warnings from gcc/clang:
+-#if defined(__clang__)
+-	#pragma clang system_header
+-#elif defined(__GNUC__)
+-	#pragma GCC system_header
+-#endif
+-
+ #ifndef LOGURU_HAS_DECLARED_FORMAT_HEADER
+ #define LOGURU_HAS_DECLARED_FORMAT_HEADER
+ 
